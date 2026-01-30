@@ -1,0 +1,10 @@
+name: My First Workflow  # 工作流名称，随便取
+on: [push]  # 触发条件：本地推代码到GitHub时执行
+jobs:
+  hello-world:  # 任务名称，随便取
+    runs-on: ubuntu-latest  # 运行环境：用最新的Ubuntu系统
+    steps:
+      - name: Checkout code  # 步骤1：拉取仓库代码
+        uses: actions/checkout@v4  # 官方Action，拉取代码到运行环境
+      - name: Print greeting  # 步骤2：执行打印命令
+        run: echo "Hello GitHub Workflow! 我跑起来啦～"  # 要执行的shell命令
